@@ -4,30 +4,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <main>
       <div id="top-div">
         <input id="color-picker" type="color" value="#f55a5a" />
-        <select>
-          <option value="placeholder">PLACEHOLDER</option>
+        <select id="mode-selector">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome Dark</option>
+          <option value="monochrome-light">Monochrome Light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic Complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
         </select>
         <button id="scheme-btn">Get Color Sheme</button>
       </div>
 
       <div id="colors-div">
-        <div id="bar-1" class="color-bar"></div>
-        <div id="bar-2" class="color-bar"></div>
-        <div id="bar-3" class="color-bar"></div>
-        <div id="bar-4" class="color-bar"></div>
-        <div id="bar-5" class="color-bar"></div>
-        <p id="hex-1" class="hex-code">#d439f0</p>
-        <p id="hex-2" class="hex-code">#d35555</p>
-        <p id="hex-3" class="hex-code">#872100</p>
-        <p id="hex-4" class="hex-code">#a9c0bf</p>
-        <p id="hex-5" class="hex-code">#ee43f7</p>
       </div>
     </main>
     <script src="index.js" type="module"></script>
