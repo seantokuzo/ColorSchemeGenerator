@@ -1,3 +1,4 @@
+const toggler = document.getElementById('toggler')
 const colorPicker = document.getElementById('color-picker')
 const modeSelector = document.getElementById('mode-selector')
 const getSchemeButton = document.getElementById('scheme-btn')
@@ -5,6 +6,32 @@ const colorsDiv = document.getElementById('colors-div')
 let pickedColor = colorPicker.value.slice(1)
 let colorMode = modeSelector.value
 let colorsMarkUp = ''
+
+function toggleDarkMode(event) {
+  console.log(event.target.checked)
+  if (!event.target.checked) {
+    document.body.style.backgroundColor = 'var(--bg)'
+    document.body.style.color = 'var(--text-light)'
+    modeSelector.style.backgroundColor = 'var(--bg)'
+    modeSelector.style.color = 'var(--text-light)'
+    modeSelector.style.border = '2px solid var(--light-border)'
+    getSchemeButton.style.backgroundColor = 'var(--bg)'
+    getSchemeButton.style.color = 'var(--text-light)'
+    getSchemeButton.style.border = '2px solid var(--light-border)'
+    return
+  } else {
+    document.body.style.backgroundColor = 'var(--bg-dark)'
+    document.body.style.color = 'var(--text-dark)'
+    modeSelector.style.backgroundColor = 'var(--bg-dark)'
+    modeSelector.style.color = 'var(--text-dark)'
+    modeSelector.style.border = '2px solid var(--bg)'
+    getSchemeButton.style.backgroundColor = 'var(--btn-dark)'
+    getSchemeButton.style.color = 'var(--text-dark)'
+    getSchemeButton.style.border = 'none'
+  }
+}
+
+toggler.addEventListener('change', toggleDarkMode)
 
 function getPickedColor(event) {
   pickedColor = event.target.value.slice(1)
