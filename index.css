@@ -168,9 +168,8 @@ input[type='color']:hover {
 /* ******************************** */
 
 select {
-  width: 75%;
   min-height: 3rem;
-  
+
   font-family: 'Barlow', sans-serif;
   font-size: 1.2em;
   font-weight: 500;
@@ -182,10 +181,22 @@ select {
 
   border: 2px solid var(--bg);
   border-radius: 5px;
+  padding-left: 0.5em;
+}
+
+select > option {
+}
+
+#mode-select {
+  width: 60%;
+}
+
+#number-select {
+  width: 12%;
 }
 
 #scheme-btn {
-  width: 22%;
+  width: 20%;
   min-height: 3rem;
 
   font-family: 'Barlow', sans-serif;
@@ -216,7 +227,7 @@ select {
   margin-top: 1rem;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, 1fr);
   grid-template-rows: 45vh 5vh;
 
   /* border: 1px solid pink; */
@@ -258,8 +269,13 @@ select {
     font-size: 0.75rem;
   }
 
+  main {
+    padding: 2rem .5rem 1rem;
+  }
+
   .toggler-div {
-    transform: scale(0.75);
+    transform: scale(0.8);
+    right: .5vw;
   }
 
   #top-div {
@@ -270,6 +286,23 @@ select {
   #picker-select-div {
     width: 100%;
     justify-content: space-between;
+  }
+
+  input[type='color'] {
+    width: 18%;
+  }
+
+  select {
+    padding-left: 0;
+  }
+
+  #mode-select {
+    width: 60%;
+    font-size: 0.85em;
+  }
+
+  #number-select {
+    width: 13%;
   }
 
   #scheme-btn {
@@ -291,6 +324,6 @@ select {
   }
 
   .hex-code {
-    font-size: 1em;
+    font-size: .8em;
   }
 }
