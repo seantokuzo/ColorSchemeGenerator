@@ -261,7 +261,7 @@ select > option {
   }
 
   main {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
   }
 
   .switch {
@@ -283,7 +283,8 @@ select > option {
   }
 
   select {
-    padding-left: 0;
+    min-height: 3rem;
+    padding-left: 5px;
   }
 
   #mode-select {
@@ -310,7 +311,7 @@ select > option {
   }
 
   #colors-div {
-    grid-template-rows: 60vh 5vh;
+    grid-template-rows: 50vh 5vh;
   }
 
   .hex-code {
