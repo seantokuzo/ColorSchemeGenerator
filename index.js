@@ -7,27 +7,35 @@ let pickedColor = colorPicker.value.slice(1)
 let colorMode = modeSelector.value
 let colorsMarkUp = ''
 
+function setLightMode() {
+  document.body.style.backgroundColor = 'var(--bg)'
+  document.body.style.color = 'var(--text-light)'
+  modeSelector.style.backgroundColor = 'var(--bg)'
+  modeSelector.style.color = 'var(--text-light)'
+  modeSelector.style.border = '2px solid var(--light-border)'
+  getSchemeButton.style.backgroundColor = 'var(--bg)'
+  getSchemeButton.style.color = 'var(--text-light)'
+  getSchemeButton.style.border = '2px solid var(--light-border)'
+}
+
+function setDarkMode() {
+  document.body.style.backgroundColor = 'var(--bg-dark)'
+  document.body.style.color = 'var(--text-dark)'
+  modeSelector.style.backgroundColor = 'var(--bg-dark)'
+  modeSelector.style.color = 'var(--text-dark)'
+  modeSelector.style.border = '2px solid var(--bg)'
+  getSchemeButton.style.backgroundColor = 'var(--btn-dark)'
+  getSchemeButton.style.color = 'var(--text-dark)'
+  getSchemeButton.style.border = 'none'
+}
+
 function toggleDarkMode(event) {
-  console.log(event.target.checked)
   if (!event.target.checked) {
-    document.body.style.backgroundColor = 'var(--bg)'
-    document.body.style.color = 'var(--text-light)'
-    modeSelector.style.backgroundColor = 'var(--bg)'
-    modeSelector.style.color = 'var(--text-light)'
-    modeSelector.style.border = '2px solid var(--light-border)'
-    getSchemeButton.style.backgroundColor = 'var(--bg)'
-    getSchemeButton.style.color = 'var(--text-light)'
-    getSchemeButton.style.border = '2px solid var(--light-border)'
+    setLightMode()
     return
   } else {
-    document.body.style.backgroundColor = 'var(--bg-dark)'
-    document.body.style.color = 'var(--text-dark)'
-    modeSelector.style.backgroundColor = 'var(--bg-dark)'
-    modeSelector.style.color = 'var(--text-dark)'
-    modeSelector.style.border = '2px solid var(--bg)'
-    getSchemeButton.style.backgroundColor = 'var(--btn-dark)'
-    getSchemeButton.style.color = 'var(--text-dark)'
-    getSchemeButton.style.border = 'none'
+    setDarkMode()
+    return
   }
 }
 
@@ -54,11 +62,11 @@ getSchemeButton.addEventListener('click', function () {
       colorsMarkUp = ''
       data.colors.map((color, i) => {
         colorsMarkUp += `
-                <div id="bar-${i + 1}" class="color-bar" style="background-color:${
+                  <div id="bar-${i + 1}" class="color-bar" style="background-color:${
           color.hex.value
         };"><p style="display:none;">${color.hex.value}</p></div>
-                <p id="hex-${i + 1}" class="hex-code">${color.hex.value}</p>
-            `
+                  <p id="hex-${i + 1}" class="hex-code">${color.hex.value}</p>
+              `
         return colorsMarkUp
       })
       colorsDiv.innerHTML = colorsMarkUp
@@ -68,7 +76,7 @@ getSchemeButton.addEventListener('click', function () {
           navigator.clipboard
             .writeText(el.textContent)
             .then(() => alert(`'${el.textContent}' copied to the clipboard`))
-            .catch(() => console.log('copy failed'))
+            .catch(() => alert('copy failed'))
         })
       })
       const hexCodes = [...document.getElementsByClassName('hex-code')]
@@ -77,7 +85,7 @@ getSchemeButton.addEventListener('click', function () {
           navigator.clipboard
             .writeText(el.textContent)
             .then(() => alert(`'${el.textContent}' copied to the clipboard`))
-            .catch(() => console.log('copy failed'))
+            .catch(() => alert('copy failed'))
         })
       })
     })
