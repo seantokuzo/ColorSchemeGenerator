@@ -29,9 +29,7 @@ main {
   width: 100%;
   max-width: 750px;
 
-  margin: 5% auto 0;
-
-  padding: 2rem;
+  margin: 2% auto 0;
 
   /* border: 1px solid beige; */
 }
@@ -41,10 +39,13 @@ main {
 /* ******************************** */
 
 .toggler-div {
-  position: absolute;
-  z-index: 5;
-  top: 2.5vh;
-  right: 8.5vw;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+
+  border: 1px solid pink;
 }
 
 /* The switch - the box around the slider */
@@ -120,19 +121,20 @@ input:checked + .slider.round:before {
 /* ******************************** */
 
 #top-div {
+  width: 100%;
   min-height: 7.5vh;
 
   position: relative;
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   /* border: 1px solid aqua; */
 }
 
 #picker-select-div {
-  width: 70%;
+  width: 77%;
 
   display: flex;
   align-items: center;
@@ -228,7 +230,7 @@ select > option {
 
   display: grid;
   grid-template-columns: repeat(auto-fit, 1fr);
-  grid-template-rows: 45vh 5vh;
+  grid-template-rows: 60vh 5vh;
 
   /* border: 1px solid pink; */
 }
@@ -270,12 +272,11 @@ select > option {
   }
 
   main {
-    padding: 2rem .5rem 1rem;
+    padding: 0.5rem;
   }
 
-  .toggler-div {
+  .switch {
     transform: scale(0.8);
-    right: .5vw;
   }
 
   #top-div {
@@ -324,6 +325,6 @@ select > option {
   }
 
   .hex-code {
-    font-size: .8em;
+    font-size: 0.8em;
   }
 }
